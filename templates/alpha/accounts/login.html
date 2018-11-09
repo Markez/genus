@@ -1,0 +1,53 @@
+{% include "alpha/accounts/header.html" %}
+{% load staticfiles %}
+  <title>Genus | Account Login</title>
+    <body class="o-page o-page--center">
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        <div class="o-page__card">
+            <div class="c-card u-mb-xsmall">
+                <header class="c-card__header u-pt-large">
+                    <a class="c-card__icon" href="#!">
+                        <img src="{% static 'img/logo-login.svg' %}" alt="Genus">
+                    </a>
+                    <h1 class="u-h3 u-text-center u-mb-zero">Welcome! Please login.</h1>
+                </header>
+                <!-- start response from server -->
+                    {% if form.errors %}
+                    <p>Your username and password didn't match. Please try again.</p>
+                    {% endif %}
+
+                    {% if next %}
+                        {% if user.is_authenticated %}
+                        <p>Your account doesn't have access to this page. To proceed,
+                        please login with an account that has access.</p>
+                        {% else %}
+                        <p>Please login to see this page.</p>
+                        {% endif %}
+                    {% endif %}
+                <!-- end response from server -->
+                <form method="post" action="{% url 'core_login' %}" class="c-card__body">
+                  {% csrf_token %}
+                    <div class="c-field u-mb-small">
+                        <label class="c-field__label" for="input1">Log in with your e-mail address</label>
+                        <input class="c-input" type="text" id="username" name="username" placeholder="Lumberjark">
+                    </div>
+
+                    <div class="c-field u-mb-small">
+                        <label class="c-field__label" for="input2">Password</label>
+                        <input class="c-input" type="password" id="password" name="password" placeholder="Password">
+                    </div>
+
+                    <button class="c-btn c-btn--info c-btn--fullwidth" type="submit">Sign in</button>
+
+                    <span class="c-divider c-divider--small has-text u-mv-medium">Terms & Conditions Apply</span>
+                </form>
+            </div>
+
+            <div class="o-line">
+                <a class="u-text-mute u-text-small" href="{% url 'core_register' %}">Don’t have an account yet? Get Started</a>
+                <a class="u-text-mute u-text-small" href="{% url 'core_forgot_password' %}">Forgot Password?</a>
+            </div>
+        </div>
+{% include "alpha/accounts/footer.html" %}
