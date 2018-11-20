@@ -1,0 +1,159 @@
+{% include "alpha/body/header.html" %}
+{% load staticfiles %}
+<title>Genus | Select Plan</title>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="c-card u-p-medium">
+                            <div class="row u-justify-center">
+                                <div class="col-md-7">
+                                    <div class="u-mt-large u-text-center">
+                                        <h4 class="u-mb-xsmall">Small Chama? Big Chama? We’ve got a plan.</h4>
+                                        <p class="u-text-mute u-mb-large">Pricing is based on two things: Number of email notifications, and the number of bulk sms available for your team. Plans start at as low as KES 0/month.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <article class="c-plan">
+                                        <img class="c-plan__img" src="{% static 'img/price-icon.svg' %}" alt="Pricing Icon">
+
+                                        <h5 class="c-plan__title">Basic</h5>
+
+                                        <h4 class="c-plan__price">
+                                        KES {{ free.charges }}<span class="u-text-mute u-h6">/month</span></h4>
+
+                                        <h5 class="c-plan__note">max. {{ free.maximum_users }} users</h5>
+
+                                        <span class="c-plan__divider"></span>
+
+                                        <ul>
+                                            <li class="c-plan__feature">
+                                                <span><strong>{{ free.bulk_emails }}</strong></span> Email Notifications
+                                            </li>
+                                            <li class="c-plan__feature">
+                                                <span><strong>3</strong></span> Clients
+                                            </li>
+                                            <li class="c-plan__feature">
+                                                <span><strong>{{ free.bulk_sms }}</strong></span> Bulk SMS
+                                            </li>
+                                        </ul>
+                                          <form method="post" action="{% url 'account_select_plan' %}">
+                                            {% csrf_token %}
+                                                <input type="text" id="plan" name="plan" value="{{ free.slug }}" hidden>
+                                                <button class="c-btn c-btn--success u-mt-medium" type="submit">Free</button>
+                                         </form>
+{#                                        <a href="#" >Contact US</a>#}
+                                    </article><!-- // .c-plan -->
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <article class="c-plan">
+                                        <img class="c-plan__img" src="{% static 'img/price-icon2.svg' %}" alt="Pricing Icon">
+
+                                        <h5 class="c-plan__title">Basic</h5>
+
+                                        <h4 class="c-plan__price">
+                                        KES {{ starter.charges }}<span class="u-text-mute u-h6">/month</span></h4>
+
+                                        <h5 class="c-plan__note">max. {{ starter.maximum_users }} users</h5>
+
+                                        <span class="c-plan__divider"></span>
+
+                                        <ul>
+                                            <li class="c-plan__feature">
+                                                <strong>{{ starter.bulk_emails }}</strong> Email Notifications
+                                            </li>
+                                            <li class="c-plan__feature">
+                                                <strong>3</strong> Clients
+                                            </li>
+                                            <li class="c-plan__feature">
+                                                <strong>{{ starter.bulk_sms }}</strong> Bulk SMS
+                                            </li>
+                                        </ul>
+                                          <form method="post" action="{% url 'account_select_plan' %}">
+                                            {% csrf_token %}
+                                                <input type="text" id="plan" name="plan" value="{{ starter.slug }}" hidden>
+                                                <button class="c-btn c-btn--warning u-mt-medium" type="submit">Starter</button>
+                                         </form>
+                                    </article><!-- // .c-plan -->
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <article class="c-plan">
+                                        <img class="c-plan__img" src="{% static 'img/price-icon3.svg' %}" alt="Pricing Icon">
+
+                                        <h5 class="c-plan__title">Basic</h5>
+
+                                        <h4 class="c-plan__price">
+                                        KES {{ silver.charges }}<span class="u-text-mute u-h6">/month</span></h4>
+
+                                        <h5 class="c-plan__note">max. {{ silver.maximum_users }} users</h5>
+
+                                        <span class="c-plan__divider"></span>
+
+                                        <ul>
+                                            <li class="c-plan__feature">
+                                                <span><strong>{{ silver.bulk_emails }}</strong></span> Email Notifications
+                                            </li>
+                                            <li class="c-plan__feature">
+                                                <span><strong>3</strong></span> Clients
+                                            </li>
+                                            <li class="c-plan__feature">
+                                                <span><strong>{{ silver.bulk_sms }}</strong></span> Bulk SMS
+                                            </li>
+                                        </ul>
+                                          <form method="post" action="{% url 'account_select_plan' %}">
+                                            {% csrf_token %}
+                                                <input type="text" id="plan" name="plan" value="{{ silver.slug }}" hidden>
+                                                <button class="c-btn c-btn--info u-mt-medium" type="submit">Silver</button>
+                                         </form>
+                                    </article><!-- // .c-plan -->
+
+                                </div>
+
+                                <div class="col-md-3">
+
+                                    <article class="c-plan">
+                                        <img class="c-plan__img" src="{% static 'img/price-icon4.svg' %}" alt="Pricing Icon">
+
+                                        <h5 class="c-plan__title">Basic</h5>
+
+                                        <h4 class="c-plan__price">
+                                        KES {{ platinum.charges }}<span class="u-text-mute u-h6">/month</span></h4>
+
+                                        <h5 class="c-plan__note">max. {{ platinum.maximum_users }} users and above</h5>
+
+                                        <span class="c-plan__divider"></span>
+
+                                        <ul>
+                                            <li class="c-plan__feature">
+                                                <span><strong>{{ platinum.bulk_emails }}</strong></span> Email Notifications
+                                            </li>
+                                            <li class="c-plan__feature">
+                                                <span><strong>3</strong></span> Clients
+                                            </li>
+                                            <li class="c-plan__feature">
+                                                <span><strong>{{ platinum.bulk_sms }}</strong></span> Bulk SMS
+                                            </li>
+                                        </ul>
+                                          <form method="post" action="{% url 'account_select_plan' %}">
+                                            {% csrf_token %}
+                                                <input type="text" id="plan" name="plan" value="{{ platinum.slug }}" hidden>
+                                                <button class="c-btn c-btn--fancy u-mt-medium" type="submit">Platinum</button>
+                                         </form>
+                                    </article><!-- // .c-plan -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // .row -->
+            </div><!-- // .container -->
+
+        </main><!-- // .o-page__content -->
+{% include "alpha/body/footer.html" %}

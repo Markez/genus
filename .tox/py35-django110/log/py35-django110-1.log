@@ -1,0 +1,8 @@
+actionid: py35-django110
+msg: getenv
+cmdargs: "/home/markez/projects/vinarq/genus/.tox/py35-django110/bin/python -m pip install 'Django>=1.10, <1.11'"
+
+Collecting Django<1.11,>=1.10
+  Using cached https://files.pythonhosted.org/packages/bb/9f/2c20639ac635a83123ddffd91ba15001cb0d04e74fbb08f31fb57e490dab/Django-1.10.8-py2.py3-none-any.whl
+Installing collected packages: Django
+Successfully installed Django-1.10.8

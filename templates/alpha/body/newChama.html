@@ -1,179 +1,92 @@
 {% include "alpha/body/header.html" %}
 {% load staticfiles %}
-        <title>Genus | Create Chama</title>
-        <!-- MAIN CONTENT -->
-        <main class="o-page__content">
-            <header class="c-navbar u-mb-medium">
-                <button class="c-sidebar-toggle js-sidebar-toggle">
-                    <span class="c-sidebar-toggle__bar"></span>
-                    <span class="c-sidebar-toggle__bar"></span>
-                    <span class="c-sidebar-toggle__bar"></span>
-                </button>
-
-                <h2 class="c-navbar__title u-mr-auto">Creating New Chama</h2>
-                  {% if user.is_staff %}
-                    <h2 class="c-navbar__title u-mr-auto"><a href="/v1/portal/" target="_blank">Admin</a></h2>
-                  {% endif %}
-                <div class="c-dropdown u-hidden-down@mobile">
-                    <a class="c-notification dropdown-toggle" href="#" id="dropdownMenuUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="c-notification__icon">
-                            <i class="fa fa-user-o"></i>
-                        </span>
-                        <span class="c-notification__number">3</span>
-                    </a>
-
-                    <div class="c-dropdown__menu c-dropdown__menu--large dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuUser">
-                        <a href="#" class="c-dropdown__item dropdown-item o-media">
-                            <span class="o-media__img u-mr-xsmall">
-                                <span class="c-avatar c-avatar--xsmall">
-                                    <img class="c-avatar__img" src="{% static 'img/avatar1-72.jpg' %}" alt="User's Profile Picture">
-                                </span>
-                            </span>
-                            <div class="o-media__body">
-                                <h6 class="u-mb-zero">Someone mentioned you</h6>
-                                <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
-                            </div>
-                        </a>
-                        <a href="#" class="c-dropdown__item dropdown-item o-media">
-                            <span class="o-media__img u-mr-xsmall">
-                                <span class="c-avatar c-avatar--xsmall">
-                                    <img class="c-avatar__img" src="{% static 'img/avatar1-72.jpg' %}" alt="User's Profile Picture">
-                                </span>
-                            </span>
-                            <div class="o-media__body">
-                                <h6 class="u-mb-zero">Recieved a Payment</h6>
-                                <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
-                            </div>
-                        </a>
-                        <a href="#" class="c-dropdown__item dropdown-item o-media">
-                            <span class="o-media__img u-mr-xsmall">
-                                <span class="c-avatar c-avatar--xsmall">
-                                    <img class="c-avatar__img" src="{% static 'img/avatar1-72.jpg' %}" alt="User's Profile Picture">
-                                </span>
-                            </span>
-                            <div class="o-media__body">
-                                <h6 class="u-mb-zero">You got a promotion</h6>
-                                <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="c-dropdown dropdown u-mr-medium u-ml-small u-hidden-down@mobile">
-                    <a class="c-notification dropdown-toggle" href="#" id="dropdownMenuAlerts" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="c-notification__icon">
-                            <i class="fa fa-bell-o"></i>
-                        </span>
-                        <span class="c-notification__number">3</span>
-                    </a>
-
-                    <div class="c-dropdown__menu c-dropdown__menu--large dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuAlerts">
-                        <a href="#" class="c-dropdown__item dropdown-item o-media">
-                            <span class="o-media__img u-mr-xsmall">
-                                <span class="c-avatar c-avatar--xsmall">
-                                    <span class="c-avatar__img u-bg-success u-flex u-justify-center u-align-items-center">
-                                        <i class="fa fa-check u-text-large u-color-white"></i>
-                                    </span>
-                                </span>
-
-                            </span>
-                            <div class="o-media__body">
-                                <h6 class="u-mb-zero">Completed a task</h6>
-                                <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="c-dropdown__item dropdown-item o-media">
-                            <span class="o-media__img u-mr-xsmall">
-                                <span class="c-avatar c-avatar--xsmall">
-                                    <span class="c-avatar__img u-bg-fancy u-flex u-justify-center u-align-items-center">
-                                        <i class="fa fa-calendar u-text-large u-color-white"></i>
-                                    </span>
-                                </span>
-
-                            </span>
-                            <div class="o-media__body">
-                                <h6 class="u-mb-zero">Company meetup</h6>
-                                <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
-                            </div>
-                        </a>
-                        <a href="#" class="c-dropdown__item dropdown-item o-media">
-                            <span class="o-media__img u-mr-xsmall">
-                                <span class="c-avatar c-avatar--xsmall">
-                                    <span class="c-avatar__img u-bg-primary u-flex u-justify-center u-align-items-center">
-                                        <i class="fa fa-info u-text-large u-color-white"></i>
-                                    </span>
-                                </span>
-
-                            </span>
-                            <div class="o-media__body">
-                                <h6 class="u-mb-zero">Someone mentioned you</h6>
-                                <p class="u-text-mute">You have recieved a mention on twitter, check it out!</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="c-dropdown dropdown">
-                    <a  class="c-avatar c-avatar--xsmall has-dropdown dropdown-toggle" href="#" id="dropdwonMenuAvatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="c-avatar__img" src="{% static 'img/avatar1-72.jpg' %}" alt="User's Profile Picture">
-                    </a>
-
-                    <div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuAvatar">
-                        <a class="c-dropdown__item dropdown-item" href="#">Edit Profile</a>
-                        <a class="c-dropdown__item dropdown-item" href="#">View Activity</a>
-                        <a class="c-dropdown__item dropdown-item" href="#">Manage Roles</a>
-                        <a class="c-dropdown__item dropdown-item" href="{% url 'core_logout' %}">Logout</a>
-                    </div>
-                </div>
-            </header><!-- // .c-navbar -->
-
-
+<title>Genus | Create Chama</title>
             <div class="container">
                 <div class="row u-mb-large">
                     <div class="col-12">
                         <div class="c-tabs">
-
-                            <ul class="c-tabs__list c-tabs__list--splitted nav nav-tabs" id="myTab" role="tablist">
-                                <li class="c-tabs__item"><a class="c-tabs__link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a></li>
-
-                                <li class="c-tabs__item"><a class="c-tabs__link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a></li>
-                            </ul>
-
                             <div class="c-tabs__content tab-content" id="nav-tabContent">
                                 <div class="c-tabs__pane active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                     <div class="row">
-                                        <div class="col-lg-5">
-                                            <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="firstName">First Name</label>
-                                                <input class="c-input" type="text" id="firstName" placeholder="Jason">
-                                            </div>
-
-                                            <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="lastName">Last Name</label>
-                                                <input class="c-input" type="text" id="lastName" placeholder="Clark">
-                                            </div>
-
-                                            <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="bio">Bio</label>
-                                                <textarea class="c-input" id="bio">Jason is a tech savy Architect and Entrepreneur, maintaining a keen interest in software and design tools, such as parametric modelling (Rhino/Grasshopper) and BIM. </textarea>
-                                            </div>
-
-                                            <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="email">E-mail Address</label>
-                                                <input class="c-input" id="email" type="email" placeholder="jason@clark.com">
+                                        <div class="col-lg-12">
+                                            <div class="u-mv-large u-text-center">
+                                                <h2 class="u-mb-xsmall">
+                                                  {% if user.is_authenticated %}
+                                                      Hi {{ user.get_username }}! you are good to Create a chama.
+                                                  {% else %}
+                                                      Oops! User not logged in.
+                                                  {% endif %}
+                                                </h2>
+                                                <p class="u-text-mute u-h6">Kindly fill in the form below in order to be able to create a <b>Chama</b>. <a href="#">Read more</a></p>
                                             </div>
                                         </div>
+                                    </div>
+                                {# ============================================#}
 
-                                        <div class="col-lg-5">
+                                  {% if messages %}
+                                    {% for msg in messages %}
+                                      <div class="alert alert-{{msg.level_tag}} alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                        {% autoescape off %}
+                                          {{ msg.message }}
+                                        {% endautoescape %}
+                                      </div>
+                                    {% endfor %}
+                                  {% endif %}
+                                  {% if form.errors %}
+                                      {% for field in form %}
+                                          {% for error in field.errors %}
+                                              <div class="alert alert-danger">
+                                                  <strong>{{ error|escape }}</strong>
+                                              </div>
+                                          {% endfor %}
+                                      {% endfor %}
+                                      {% for error in form.non_field_errors %}
+                                          <div class="alert alert-danger">
+                                              <strong>{{ error|escape }}</strong>
+                                          </div>
+                                      {% endfor %}
+                                  {% endif %}
+                              {# ============================================#}
+                                <form method="post" action="{% url 'account_create_chama' %}">
+                                  {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-lg-6">
                                             <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="companyName">Company Name</label>
-                                                <input class="c-input" id="companyName" type="text" placeholder="Dashboard Ltd.">
+                                                <label class="c-field__label" for="firstName">Chama Name</label>
+                                                {{ form.name }}
                                             </div>
 
                                             <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="website">Website</label>
-                                                <input class="c-input" id="website" type="text" placeholder="zawiastudio.com">
+                                                <label class="c-field__label" for="lastName">Year Founded</label>
+                                                {{ form.year_founded }}
+                                            </div>
+                                            <div class="c-field u-mb-small">
+                                                <label class="c-field__label" for="email">Total Allowed Members</label>
+                                                {{ form.maximum_members }}
+                                            </div>
+
+                                            <div class="c-field u-mb-small">
+                                                <label class="c-field__label" for="bio">Brief Description</label>
+                                                {{ form.description }}
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="c-field u-mb-small">
+                                                <label class="c-field__label" for="companyName">Contribution Intervals</label>
+                                                {{ form.contribution_intervals }}
+                                            </div>
+
+                                            <div class="c-field u-mb-small">
+                                                <label class="c-field__label" for="website">Total Amount</label>
+                                                {{ form.total_contributions }}
+                                            </div>
+
+                                            <div class="c-field u-mb-small">
+                                                <label class="c-field__label" for="website">Current Total Amount Saved</label>
+                                                {{ form.saved_amounts }}
                                             </div>
 
                                             <label class="c-field__label" for="socialProfile">Social Profiles</label>
@@ -182,72 +95,32 @@
                                                 <span class="c-field__addon u-bg-twitter">
                                                     <i class="fa fa-twitter u-color-white"></i>
                                                 </span>
-                                                <input class="c-input" id="socialProfile" type="text" placeholder="Clark">
+                                                {{ form.twitter_link }}
                                             </div>
 
                                             <div class="c-field has-addon-left">
                                                 <span class="c-field__addon u-bg-facebook">
                                                     <i class="fa fa-facebook u-color-white"></i>
                                                 </span>
-                                                <input class="c-input" type="text" placeholder="Clark">
+                                                {{ form.facebook_link }}
                                             </div>
+
+                                            <div class="c-field u-mb-small" style="margin-top: 10px;">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                      <button class="c-btn c-btn--primary c-btn--fullwidth" type="reset">Reset</button>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                      <button class="c-btn c-btn--info c-btn--fullwidth" type="submit">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
+                                  </form>
                                 </div>
 
-                                <div class="c-tabs__pane" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                    <div class="row">
-                                        <div class="col-lg-5">
-                                            <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="firstNameOther">First Name</label>
-                                                <input class="c-input" type="text" id="firstNameOther" placeholder="Jason">
-                                            </div>
-
-                                            <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="lastNameOther">Last Name</label>
-                                                <input class="c-input" type="text" id="lastNameOther" placeholder="Clark">
-                                            </div>
-
-                                            <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="bioOther">Bio</label>
-                                                <textarea class="c-input" id="bioOther">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dignissimos, et qui, dolorem aspernatur quos vitae delectus libero quam inventore.</textarea>
-                                            </div>
-
-                                            <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="emailOther">E-mail Address</label>
-                                                <input class="c-input" id="emailOther" type="email" placeholder="jason@clark.com">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-5">
-                                            <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="companyNameOther">Company Name</label>
-                                                <input class="c-input" id="companyNameOther" type="text" placeholder="Dashboard Ltd.">
-                                            </div>
-
-                                            <div class="c-field u-mb-small">
-                                                <label class="c-field__label" for="websiteOther">Website</label>
-                                                <input class="c-input" id="websiteOther" type="text" placeholder="zawiastudio.com">
-                                            </div>
-
-                                            <label class="c-field__label" for="socialProfileOther">Social Profiles</label>
-
-                                            <div class="c-field has-addon-left u-mb-small">
-                                                <span class="c-field__addon u-bg-twitter">
-                                                    <i class="fa fa-twitter u-color-white"></i>
-                                                </span>
-                                                <input class="c-input" id="socialProfileOther" type="text" placeholder="Clark">
-                                            </div>
-
-                                            <div class="c-field has-addon-left">
-                                                <span class="c-field__addon u-bg-facebook">
-                                                    <i class="fa fa-facebook u-color-white"></i>
-                                                </span>
-                                                <input class="c-input" type="text" placeholder="Clark">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 

@@ -7,6 +7,7 @@ urlpatterns = [
     # django
     path('dashboard', views.dash_board, name='account_dashboard'),
     path('getting/started/', views.starter, name='account_start'),
+    path('select/plan/', views.selectPlan, name='account_select_plan'),
     path('creating/newchama/', views.newChama, name='account_create_chama'),
     #
 ]

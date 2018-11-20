@@ -1,0 +1,10 @@
+actionid: py35-django111
+msg: getenv
+cmdargs: "/home/markez/projects/vinarq/genus/.tox/py35-django111/bin/python -m pip install 'Django>=1.11, <2.0'"
+
+Collecting Django<2.0,>=1.11
+  Using cached https://files.pythonhosted.org/packages/44/e7/872bbf76aa16b7a061698d75325dac023285db33db4bda8ba8fe5d3bb356/Django-1.11.16-py2.py3-none-any.whl
+Collecting pytz (from Django<2.0,>=1.11)
+  Downloading https://files.pythonhosted.org/packages/52/8b/876c5745f617630be90cfb8fafe363c6d7204b176dc707d1805d1e9a0a35/pytz-2018.6-py2.py3-none-any.whl (507kB)
+Installing collected packages: pytz, Django
+Successfully installed Django-1.11.16 pytz-2018.6

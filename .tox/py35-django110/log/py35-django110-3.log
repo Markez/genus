@@ -1,0 +1,5 @@
+actionid: py35-django110
+msg: envreport
+cmdargs: '/home/markez/projects/vinarq/genus/.tox/py35-django110/bin/python -m pip freeze'
+
+Django==1.10.8

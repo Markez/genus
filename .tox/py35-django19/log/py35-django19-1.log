@@ -1,0 +1,8 @@
+actionid: py35-django19
+msg: getenv
+cmdargs: "/home/markez/projects/vinarq/genus/.tox/py35-django19/bin/python -m pip install 'Django>=1.9, <1.10'"
+
+Collecting Django<1.10,>=1.9
+  Using cached https://files.pythonhosted.org/packages/a6/ee/6dfd9e8e0d61ab22ed09c6c8f6ae5a4ad0d3bf07bca9124fb5a087f876df/Django-1.9.13-py2.py3-none-any.whl
+Installing collected packages: Django
+Successfully installed Django-1.9.13

@@ -1,0 +1,10 @@
+actionid: py35-django20
+msg: getenv
+cmdargs: "/home/markez/projects/vinarq/genus/.tox/py35-django20/bin/python -m pip install 'Django>=2.0b1, <2.1'"
+
+Collecting Django<2.1,>=2.0b1
+  Using cached https://files.pythonhosted.org/packages/6c/9d/c0feec696b815708354a2fd06ae0f51330a15043822a29bc8be2f185d9fe/Django-2.0.9-py3-none-any.whl
+Collecting pytz (from Django<2.1,>=2.0b1)
+  Using cached https://files.pythonhosted.org/packages/52/8b/876c5745f617630be90cfb8fafe363c6d7204b176dc707d1805d1e9a0a35/pytz-2018.6-py2.py3-none-any.whl
+Installing collected packages: pytz, Django
+Successfully installed Django-2.0.9 pytz-2018.6

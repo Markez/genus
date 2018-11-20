@@ -1,0 +1,10 @@
+actionid: py35-django20
+msg: getenv
+cmdargs: '/home/markez/.virtualenv/genus/bin/python3 -m virtualenv --python /home/markez/.virtualenv/genus/bin/python3 py35-django20'
+
+Already using interpreter /home/markez/.virtualenv/genus/bin/python3
+Using real prefix '/usr'
+Path not in prefix '/home/markez/.virtualenv/genus/include/python3.5m' '/usr'
+New python executable in /home/markez/projects/vinarq/genus/.tox/py35-django20/bin/python3
+Also creating executable in /home/markez/projects/vinarq/genus/.tox/py35-django20/bin/python
+Installing setuptools, pip, wheel...done.
