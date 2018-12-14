@@ -12,7 +12,7 @@
                                             <div class="u-mv-large u-text-center">
                                                 <h2 class="u-mb-xsmall">
                                                   {% if user.is_authenticated %}
-                                                      Hi {{ user.get_username }}! you are good to Create a chama.
+                                                      Hi {{ user.get_username }}! create Chama under {{ plan }} plan.
                                                   {% else %}
                                                       Oops! User not logged in.
                                                   {% endif %}
@@ -50,6 +50,7 @@
                               {# ============================================#}
                                 <form method="post" action="{% url 'account_create_chama' %}">
                                   {% csrf_token %}
+                                            <input type="text" name="plan" value="{{ plan }}" hidden>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="c-field u-mb-small">

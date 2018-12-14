@@ -1,0 +1,46 @@
+{% include "alpha/accounts/header.html" %}
+{% load staticfiles %}
+  <title>Genus | Account Registration</title>
+
+    <body class="o-page o-page--center">
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        <div class="o-page__card">
+            <div class="c-card u-mb-xsmall">
+                <header class="c-card__header u-pt-large">
+                    <a class="c-card__icon" href="#!">
+                        <img src="{% static 'img/logo-login.svg' %}" alt="Genus">
+                    </a>
+                    <h1 class="u-h3 u-text-center u-mb-zero">Sign up to Get Started</h1>
+                </header>
+                <form class="c-card__body" action="" method="post">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {{ form.as_p }}
+                      <div class="c-field u-mb-small">
+                          <label class="c-field__label" for="input3">Mobile Number</label>
+                          <input class="c-input" type="text" name="mnumber" id="mnumber" placeholder="0716357527" required>
+                      </div>
+                    {% for field in form %}
+                      <div class="c-field u-mb-small">
+                        <label class="c-field__label" for="{{ field.name }}">{{ field.label }}</label>
+                        {{ field }}
+                      </div>
+                    {% endfor %}
+
+                    <button class="c-btn c-btn--info c-btn--fullwidth" type="submit">Sign Up</button>
+
+                    <span class="c-divider c-divider--small has-text u-mv-medium">Terms & Conditions Apply</span>
+
+                </form>
+            </div>
+
+            <div class="o-line">
+                <a class="u-text-mute u-text-small" href="{% url 'core_login' %}" title="Login">
+                    <i class="fa fa-long-arrow-left u-mr-xsmall"></i> Already have an account, login instead
+                </a>
+            </div>
+
+        </div>
+{% include "alpha/accounts/footer.html" %}

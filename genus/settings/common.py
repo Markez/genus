@@ -52,6 +52,7 @@ CUSTOM_APPS = [
     'apps.common',
     'apps.accounts',
     'apps.api',
+    'apps.sms',
 ]
 
 THIRD_PARTY_APPS = [
@@ -273,6 +274,11 @@ LOGGING = {
             'propagate': True,
         },
         'apis_view': {
+              'handlers': ['console', 'logfile'],
+              'level': 'INFO',
+              'propagate': True,
+          },
+        'chama_backend': {
               'handlers': ['console', 'logfile'],
               'level': 'INFO',
               'propagate': True,

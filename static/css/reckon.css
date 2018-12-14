@@ -1,0 +1,8 @@
+#alert_st{
+    margin-left: 30px;
+    color: #fd3017 !important;
+}
+
+#form_ajax_error, .errorlist {
+    color: red;
+}

@@ -3,7 +3,7 @@ from . import serializers
 import logging
 from rest_framework.decorators import action
 from django.http import JsonResponse
-from backend.accounts.processes import RegistrationHandler, passResetHandler
+from backend.accounts.processes import RegistrationHandler, PassResetHandler
 from backend.common.processes import BaseHandler
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
@@ -34,7 +34,7 @@ class RegisterUsersApi(APIView):
             logging.info(mobile_number)
             logging.info(username)
             logging.info(password)
-            res_ = BaseHandler.mobileNumberExists(mobile_number)
+            res_ = BaseHandler.mobile_number_exists(mobile_number)
             if res_ is True:
                 status = 400
                 response['status'] = False
@@ -44,7 +44,7 @@ class RegisterUsersApi(APIView):
                 user = User()
                 user.username = username
                 user.set_password(password)
-                RegistrationHandler.registerUserApi(user, mobile_number, username)
+                RegistrationHandler.register_user_api(user, mobile_number, username)
                 status = 201
                 response['status'] = True
                 response['code'] = 0
@@ -78,9 +78,9 @@ class RegistrationVeryPhone(APIView):
             code = serializer.validated_data['code']
             logging.info(mobile_number)
             logging.info(code)
-            res_ = BaseHandler.mobileNumberExists(mobile_number)
+            res_ = BaseHandler.mobile_number_exists(mobile_number)
             if res_ is True:
-                response_ = RegistrationHandler.smsCodeActivation(mobile_number, code)
+                response_ = RegistrationHandler.sms_code_activation(mobile_number, code)
                 # return JsonResponse(
                 #     RegistrationHandler.smsCodeAPIActivation(
                 #         serializer.validated_data['mobile_number'],
@@ -139,9 +139,9 @@ class requestPasswordResetCode(APIView):
             serializer.is_valid(raise_exception=True)
             mobile_number = serializer.validated_data['mobile_number']
             logging.info(str(mobile_number))
-            res_ = BaseHandler.mobileNumberExists(mobile_number)
+            res_ = BaseHandler.mobile_number_exists(mobile_number)
             if res_ is True:
-                response_ = passResetHandler.processResetCode(mobile_number)
+                response_ = PassResetHandler.process_reset_code(mobile_number)
                 if response_ is True:
                     status = 201
                     response['status'] = True
@@ -190,9 +190,9 @@ class validatePasswordResetCode(APIView):
             mobile_number = serializer.validated_data['mobile_number']
             code = serializer.validated_data['code']
             logging.info(str(mobile_number))
-            res_ = BaseHandler.mobileNumberExists(mobile_number)
+            res_ = BaseHandler.mobile_number_exists(mobile_number)
             if res_ is True:
-                response_ = RegistrationHandler.smsCodeActivation(mobile_number, code)
+                response_ = RegistrationHandler.sms_code_activation(mobile_number, code)
                 if response_ == "error0":
                     status = 400
                     response['status'] = False
@@ -253,7 +253,7 @@ class passwordReset(APIView):
             new_password = serializer.validated_data['new_password']
             confirmed_password = serializer.validated_data['confirm_password']
             logging.info(str(mobile_number))
-            res_ = BaseHandler.mobileNumberExists(mobile_number)
+            res_ = BaseHandler.mobile_number_exists(mobile_number)
             if res_ is True:
                 logging.info('Ready to reset password')
                 min_length = 8
@@ -268,7 +268,7 @@ class passwordReset(APIView):
                     response['code'] = 1
                     response['message'] = "This password must contain at least 8 characters."
                 else:
-                    reply = passResetHandler.setNewPassword(mobile_number, new_password)
+                    reply = PassResetHandler.set_new_password(mobile_number, new_password)
                     if reply is True:
                         status = 201
                         response['status'] = True

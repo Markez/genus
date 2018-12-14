@@ -31,10 +31,10 @@ class ExportCsvMixin:
 class CreateChamaAdmin(admin.ModelAdmin, ExportCsvMixin):
     actions = ["export_as_csv"]
     date_hierarchy = 'date'
-    search_fields = ('name', 'creator__creator')
-    list_filter = ['contribution_intervals', ("date", DateRangeFilter)]
-    list_display = ['name', 'year_founded', 'maximum_members', 'contribution_intervals', 'total_contributions',
-                    'saved_amounts']
+    search_fields = ('name', 'creator')
+    list_filter = ['contribution_intervals', 'plan_package', ("date", DateRangeFilter)]
+    list_display = ['creator', 'mobile_number', 'name', 'year_founded', 'maximum_members', 'contribution_intervals',
+                    'total_contributions', 'saved_amounts', 'plan_package']
 
 
 @admin.register(plan_packages)
